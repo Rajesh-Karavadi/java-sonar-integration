@@ -20,11 +20,11 @@ jobs:
           distribution: 'temurin'  # or adopt/openjdk/zulu etc.
           java-version: '11'
 
-      - name: Build with Maven
+      - name: Build and Generate Test Report
         run: mvn -B clean verify
 
       - name: Test with Maven
-        run: mvn test -X
+        run: mvn clean test -X
 
       - name: Package
         run: mvn clean package
